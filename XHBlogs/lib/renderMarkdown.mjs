@@ -66,7 +66,50 @@ function fixFragmentLinks() {
   };
 }
 
+// ============================================================
+// 对话气泡：正文里只要有"行尾 r"的行，就认为这是对话体
+//   行尾 r → 右侧绿气泡（r 自动去掉）
+//   其余行 → 左侧白气泡
+// 没有 r 的文章完全不受影响；标题/列表/图片/引用等非纯文本行保持原样。
+// ============================================================
+const CHAT_RIGHT = /^(.*?)(?:\s+|(?<=[，。！？；：、…—）》”】」』~]))r\s*$/u;
+const PLAIN_LINE = /^(?!\s*(?:#{1,6}\s|>|[-*+]\s|\d+[.)]\s|\||```|~~~|!\[|<|:::))/u;
+
+function applyChatBubbles(markdown) {
+  if (!/r\s*$/m.test(markdown)) return markdown;
+
+  // 气泡里是原生 HTML，不再走 Markdown 转义，这里把多余的反斜杠还原
+  const unescapeInline = (s) => s.replace(/\\([\\`*_{}[\]()#+\-.!~>|])/g, '$1').trim();
+
+  const lines = markdown.split(/\r?\n/);
+  // 至少有一行是"行尾 r"的纯文本行，才判定为对话体
+  const hasMarker = lines.some((line) => line.trim() !== '' && PLAIN_LINE.test(line) && CHAT_RIGHT.test(line.trim()));
+  if (!hasMarker) return markdown;
+
+  const out = [];
+  for (const line of lines) {
+    const text = line.trim();
+    if (text === '') {
+      out.push('');
+      continue;
+    }
+    if (!PLAIN_LINE.test(text)) {
+      out.push(line);
+      continue;
+    }
+    const right = text.match(CHAT_RIGHT);
+    if (right) {
+      out.push(`<div class="chat-right">${unescapeInline(right[1])}</div>`);
+    } else {
+      out.push(`<div class="chat-left">${unescapeInline(text)}</div>`);
+    }
+  }
+  return out.join('\n\n');
+}
+
 export async function renderMarkdown(content) {
+  const prepared = applyChatBubbles(content);
+
   const processed = await unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -82,6 +125,6 @@ export async function renderMarkdown(content) {
     })
     .use(rehypeKatex)
     .use(rehypeStringify)
-    .process(content);
+    .process(prepared);
   return processed.toString();
 }
