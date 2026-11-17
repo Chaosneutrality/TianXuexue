@@ -1,4 +1,4 @@
-﻿import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 const NET_EASE_HEADERS = {
   'User-Agent':
@@ -66,7 +66,9 @@ export async function GET(request: NextRequest) {
           author: artistName,
           cover: song.album?.picUrl || '',
           pic: song.album?.picUrl || '',
-          url: `https://music.163.com/song/media/outer/url?id=${songId}.mp3`,
+          // 改用 meting 接口取音源：网易云 music.163.com/song/media/outer/url 已失效，
+          // 对 VIP 歌和免费歌都会 302 到 http://music.163.com/404，导致播放按钮点了没反应
+          url: `https://meting.liveling.top/api?server=netease&type=url&id=${songId}`,
           lrc: lrcText,
         }
       } catch (error) {
