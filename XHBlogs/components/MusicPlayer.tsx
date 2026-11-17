@@ -51,8 +51,13 @@ export default function CloudPlayer({ songIds }: { songIds: string[] }) {
     let isMounted = true;
     const fetchMusicData = async () => {
       try {
+        // 原作者的老接口（已废弃，无法播放VIP）
+        // fetch(`https://api.injahow.cn/meting/?server=netease&type=song&id=${id}`)
+        // 换成能用的新接口
+        // fetch(`https://meting.liveling.top/api?server=netease&type=song&id=${id}`)
+
         const fetchPromises = songIds.map(id =>
-          fetch(`https://api.injahow.cn/meting/?server=netease&type=song&id=${id}`)
+          fetch(`https://meting.liveling.top/api?server=netease&type=song&id=${id}`)
             .then(res => { if (!res.ok) throw new Error("API 异常"); return res.json(); })
             .catch(err => null)
         );

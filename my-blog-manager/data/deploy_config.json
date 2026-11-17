@@ -1,7 +1,7 @@
 {
-  "blogPath": "D:\\DEVC++\\XinghuisamaBlogs\\XHBlogs",
+  "blogPath": "D:\\Host\\XinghuisamaBlogs-main\\XinghuisamaBlogs-main\\XHBlogs",
   "staticRepoUrl": "",
   "staticBranch": "gh-pages",
-  "sourceRepoUrl": "",
+  "sourceRepoUrl": "git@github.com:Chaosneutrality/TianXuexue.git",
   "sourceBranch": "main"
 }
