@@ -23,6 +23,15 @@ const schema = {
       ...(defaultSchema.attributes?.span || []),
       ['className', 'math', 'math-inline', 'math-display'],
     ],
+    // 只放行对话气泡这两个固定类名，其余 class 仍会被剥掉
+    div: [
+      ...(defaultSchema.attributes?.div || []),
+      ['className', 'chat-left', 'chat-right'],
+    ],
+    p: [
+      ...(defaultSchema.attributes?.p || []),
+      ['className', 'chat-left', 'chat-right'],
+    ],
   },
 };
 

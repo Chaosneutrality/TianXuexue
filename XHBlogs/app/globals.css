@@ -95,3 +95,45 @@ input[type=range]::-webkit-slider-thumb {
   scrollbar-width: thin;
   scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
 }
+
+/* ========================================================
+   7. 微信风格对话气泡（仅文章正文 .chat-left / .chat-right 生效）
+   用法：在文章 Markdown 里直接写下面两行
+     <div class="chat-left">早就醒啦</div>
+     <div class="chat-right">你睡醒了吗</div>
+   ======================================================== */
+#article-content .chat-left,
+#article-content .chat-right {
+  display: table;
+  max-width: 78%;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: left;
+  clear: both;
+  word-break: break-word;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* 对方：白底，靠左 */
+#article-content .chat-left {
+  margin-right: auto;
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* 自己：微信绿，靠右 */
+#article-content .chat-right {
+  margin-left: auto;
+  background: #95ec69 !important;
+  color: #1a1a1a !important;
+}
+
+/* 气泡内部不要再有多余的段落间距 */
+#article-content .chat-left p,
+#article-content .chat-right p {
+  margin: 0 !important;
+}
