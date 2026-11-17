@@ -6,6 +6,27 @@ const NET_EASE_HEADERS = {
   Referer: 'https://music.163.com/',
 }
 
+// 服务端把 meting 的 302 解析成网易云 CDN 直链再返回给浏览器。
+// 原因：手机（尤其蜂窝网络）经常连不上第三方域名 meting.liveling.top，
+// 而 m801/m8.music.126.net 是网易云自家国内 CDN，手机直连没问题。
+// 解析失败会退回接口地址，行为与改动前一致。
+async function resolvePlayUrl(songId: string): Promise<string> {
+  const fallback = `https://meting.liveling.top/api?server=netease&type=url&id=${songId}`
+  try {
+    const res = await fetch(fallback, {
+      headers: NET_EASE_HEADERS,
+      redirect: 'manual',
+      cache: 'no-store',
+      signal: AbortSignal.timeout(6000),
+    })
+    const location = res.headers.get('location')
+    if (location && /^https?:\/\//i.test(location)) return location
+  } catch {
+    /* 解析失败就用接口地址，让浏览器自己跟随 302 */
+  }
+  return fallback
+}
+
 type SongResult = {
   id: string
   name?: string
@@ -66,9 +87,9 @@ export async function GET(request: NextRequest) {
           author: artistName,
           cover: song.album?.picUrl || '',
           pic: song.album?.picUrl || '',
-          // 改用 meting 接口取音源：网易云 music.163.com/song/media/outer/url 已失效，
-          // 对 VIP 歌和免费歌都会 302 到 http://music.163.com/404，导致播放按钮点了没反应
-          url: `https://meting.liveling.top/api?server=netease&type=url&id=${songId}`,
+          // 音源：服务端已把 meting 的 302 解析成网易云 CDN 直链，
+          // 手机端不必再访问第三方域名，直连 m801/m8.music.126.net
+          url: await resolvePlayUrl(songId),
           lrc: lrcText,
         }
       } catch (error) {
