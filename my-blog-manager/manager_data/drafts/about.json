@@ -1,0 +1,12 @@
+{
+  "id": "about",
+  "type": "about",
+  "title": "关于我",
+  "description": "",
+  "content": "<p>个人简介</p><p>你好，我是 天雪雪。</p><p>专注于<strong>计算化学、人工智能与软件工程</strong>的交叉应用。</p><p><strong>🔬 研究与计算方向</strong></p><ul class=\"tight\" data-tight=\"true\"><li><p><strong>图神经网络:</strong> 用于分子性质预测与特征提取。</p></li><li><p><strong>分子对接:</strong> 用于评估配体与受体蛋白的结合模式与亲和力。</p></li><li><p><strong>分子动力学模拟 :</strong> 用于探究生物大分子在原子尺度的动态行为与构象变化。</p></li></ul><p><strong>💻 软件工程能力</strong></p><ul class=\"tight\" data-tight=\"true\"><li><p><strong>后端开发:</strong> 使用 <strong>Spring Boot</strong> 框架构建服务端架构，能够处理复杂的数据逻辑与计算任务调度。</p></li><li><p><strong>前端开发:</strong> 熟练掌握 <strong>Vue.js</strong> 与 <strong>React</strong> 框架，为复杂科学数据的可视化与交互提供流畅的体验。</p></li></ul><p><strong>欢迎各位朋友联系交流~</strong></p>",
+  "cover": "https://bu.dusays.com/2026/03/24/69c23dc278c78.jpg",
+  "tags": [],
+  "mood": "",
+  "date": "2026-03-31",
+  "lastModified": 1794895113040
+}
