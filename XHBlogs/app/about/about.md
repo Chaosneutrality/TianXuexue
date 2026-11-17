@@ -1,15 +1,15 @@
 ---
 title: 关于我
-date: '2026-03-31'
+date: '2026-03-31 18:09:35'
 tags: []
 mood: ''
-cover: https://bu.dusays.com/2026/03/24/69c23dc278c78.jpg
+cover: https://files.seeusercontent.com/2026/11/17/4iAb/a3128ce.jpg
 description: ''
 ---
 
 个人简介
 
-你好，我是 XingHuiSama。
+你好，我是 天雪雪。
 
 专注于**计算化学、人工智能与软件工程**的交叉应用。
 
