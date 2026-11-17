@@ -102,8 +102,8 @@ input[type=range]::-webkit-slider-thumb {
      <div class="chat-left">早就醒啦</div>
      <div class="chat-right">你睡醒了吗</div>
    ======================================================== */
-#article-content .chat-left,
-#article-content .chat-right {
+.prose .chat-left,
+.prose .chat-right {
   display: table;
   max-width: 78%;
   margin: 0.5rem 0;
@@ -118,7 +118,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 /* 对方：白底，靠左 */
-#article-content .chat-left {
+.prose .chat-left {
   margin-right: auto;
   background: #ffffff !important;
   color: #1a1a1a !important;
@@ -126,14 +126,14 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 /* 自己：微信绿，靠右 */
-#article-content .chat-right {
+.prose .chat-right {
   margin-left: auto;
   background: #95ec69 !important;
   color: #1a1a1a !important;
 }
 
 /* 气泡内部不要再有多余的段落间距 */
-#article-content .chat-left p,
-#article-content .chat-right p {
+.prose .chat-left p,
+.prose .chat-right p {
   margin: 0 !important;
 }
