@@ -26,7 +26,7 @@ const schema = {
     // 只放行对话气泡这两个固定类名，其余 class 仍会被剥掉
     div: [
       ...(defaultSchema.attributes?.div || []),
-      ['className', 'chat-left', 'chat-right'],
+      ['className', 'chat-left', 'chat-right', 'chat-image'],
     ],
     p: [
       ...(defaultSchema.attributes?.p || []),
@@ -67,24 +67,50 @@ function fixFragmentLinks() {
 }
 
 // ============================================================
-// 对话气泡：正文里只要有"行尾 r"的行，就认为这是对话体
-//   行尾 r → 右侧绿气泡（r 自动去掉）
-//   其余行 → 左侧白气泡
-// 没有 r 的文章完全不受影响；标题/列表/图片/引用等非纯文本行保持原样。
+// 对话气泡：正文里出现"行尾 r"或"行尾 l"就认为这是对话体
+//   行尾 r → 右侧绿气泡；行尾 l → 左侧白气泡（标记自动去掉）
+//   没标记的行 → 走标记的反面（用 r 的篇章默认左边，用 l 的篇章默认右边）
+// 没有 r / l 标记的文章完全不受影响；标题、列表、引用等保持原样。
 // ============================================================
-const CHAT_RIGHT = /^(.*?)(?:\s+|(?<=[，。！？；：、…—）》”】」』~]))r\s*$/u;
-const PLAIN_LINE = /^(?!\s*(?:#{1,6}\s|>|[-*+]\s|\d+[.)]\s|\||```|~~~|!\[|<|:::))/u;
+const NOT_CHAT_LINE = /^\s*(?:#{1,6}\s|>|[-*+]\s|\d+[.)]\s|\||```|~~~|<|:::)/u;
+const IMAGE_ONLY = /^(?:\s*!\[[^\]]*\]\([^()\s]+\)\s*)+$/u;
+
+// 行尾标记：r = 右（绿），l = 左（白）。
+// 标记前一位只要是中文/空格/标点都算；只有英文字母或数字结尾（for、girl）不当标记。
+function splitMark(line) {
+  const t = line.replace(/\s+$/, '');
+  if (!/[rl]$/.test(t)) return null;
+  const body = t.slice(0, -1);
+  const prev = body.slice(-1);
+  if (prev === '' || /[A-Za-z0-9]/.test(prev)) return null;
+  const text = body.trim();
+  if (text === '') return null;
+  return { side: t.endsWith('r') ? 'right' : 'left', text };
+}
+
+// 气泡里是原生 HTML，Markdown 语法不会被解析，这里把链接/图片手动转成 HTML
+function inlineToHtml(text) {
+  return text
+    .replace(/!\[([^\]]*)\]\(([^()\s]+)\)/g, '<img src="$2" alt="$1">')
+    .replace(/\[([^\]]+)\]\(([^()\s]+)\)/g, '<a href="$2">$1</a>');
+}
 
 function applyChatBubbles(markdown) {
-  if (!/r\s*$/m.test(markdown)) return markdown;
-
-  // 气泡里是原生 HTML，不再走 Markdown 转义，这里把多余的反斜杠还原
   const unescapeInline = (s) => s.replace(/\\([\\`*_{}[\]()#+\-.!~>|])/g, '$1').trim();
 
   const lines = markdown.split(/\r?\n/);
-  // 至少有一行是"行尾 r"的纯文本行，才判定为对话体
-  const hasMarker = lines.some((line) => line.trim() !== '' && PLAIN_LINE.test(line) && CHAT_RIGHT.test(line.trim()));
-  if (!hasMarker) return markdown;
+  const marks = lines
+    .map((line) => line.trim())
+    .filter((t) => t !== '' && !NOT_CHAT_LINE.test(t))
+    .map((t) => splitMark(t))
+    .filter(Boolean)
+    .map((m) => m.side);
+
+  if (marks.length === 0) return markdown;
+
+  const rightCount = marks.filter((m) => m === 'right').length;
+  const leftCount = marks.filter((m) => m === 'left').length;
+  const defaultSide = rightCount >= leftCount ? 'left' : 'right';
 
   const out = [];
   for (const line of lines) {
@@ -93,15 +119,18 @@ function applyChatBubbles(markdown) {
       out.push('');
       continue;
     }
-    if (!PLAIN_LINE.test(text)) {
+    if (NOT_CHAT_LINE.test(text)) {
       out.push(line);
       continue;
     }
-    const right = text.match(CHAT_RIGHT);
-    if (right) {
-      out.push(`<div class="chat-right">${unescapeInline(right[1])}</div>`);
+    const mark = splitMark(text);
+    const side = mark ? mark.side : defaultSide;
+    const body = unescapeInline(mark ? mark.text : text);
+
+    if (IMAGE_ONLY.test(body)) {
+      out.push(`<div class="chat-${side} chat-image">${inlineToHtml(body)}</div>`);
     } else {
-      out.push(`<div class="chat-left">${unescapeInline(text)}</div>`);
+      out.push(`<div class="chat-${side}">${inlineToHtml(body)}</div>`);
     }
   }
   return out.join('\n\n');
