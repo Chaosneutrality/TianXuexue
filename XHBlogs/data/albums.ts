@@ -108,8 +108,8 @@ export const albums: Album[] = [
     "description": "我们天雪雪世界第一！"
   },
   {
-    "description": "123",
-    "title": "123",
+    "description": "",
+    "title": "生活印迹",
     "id": "album_1795012243290",
     "photos": [
       {
@@ -180,6 +180,50 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E6%88%91%E7%9A%84%E5%BF%83%E5%9C%A8%E4%B8%8B%E9%9B%A8.jpg"
+      }
+    ],
+    "date": "2026-11-18"
+  },
+  {
+    "description": "景色",
+    "title": "地球旅途",
+    "id": "album_1795012763559",
+    "photos": [
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF1.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF2.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF3.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF4.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF5.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF6.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF7.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF8.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF9.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF10.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF12.png"
+      },
+      {
+        "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF%E8%89%B211.png"
       }
     ],
     "date": "2026-11-18"
