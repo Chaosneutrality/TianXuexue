@@ -98,7 +98,8 @@ function inlineToHtml(text) {
 function applyChatBubbles(markdown) {
   const unescapeInline = (s) => s.replace(/\\([\\`*_{}[\]()#+\-.!~>|])/g, '$1').trim();
 
-  const lines = markdown.split(/\r?\n/);
+  // 去掉零宽字符（编辑器偶尔会插入），避免标记识别失败
+  const lines = markdown.replace(/[\u200B\u200C\u200D\uFEFF]/g, '').split(/\r?\n/);
   const marks = lines
     .map((line) => line.trim())
     .filter((t) => t !== '' && !NOT_CHAT_LINE.test(t))
