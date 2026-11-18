@@ -15,6 +15,7 @@ import ClientSocials from '../../../components/ClientSocials';
 import ClientTOC from '../../../components/ClientTOC';
 import BackButton from '../../../components/BackButton';
 import Comments from '../../../components/Comments';
+import ArticleImageZoom from '../../../components/ArticleImageZoom';
 import SidebarLyric from '../../../components/SidebarLyric';
 
 export async function generateStaticParams() {
@@ -123,6 +124,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
   return (
     <div className="min-h-screen relative pb-20">
       <Navbar />
+      <ArticleImageZoom />
       <PageTransition>
         <main className="w-[95%] md:w-[90%] max-w-6xl mx-auto mt-24 md:mt-28 flex flex-col lg:flex-row gap-6 md:gap-8 relative z-10">
 

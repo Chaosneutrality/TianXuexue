@@ -169,6 +169,23 @@ function applyChatBubbles(markdown) {
   return out.join('\n\n');
 }
 
+// 外链一律新窗口打开（站内锚点保持原样）
+function externalLinksInNewTab() {
+  return (tree) => {
+    const walk = (node) => {
+      if (node.type === 'element' && node.tagName === 'a') {
+        const href = node.properties?.href;
+        if (typeof href === 'string' && /^https?:\/\//i.test(href)) {
+          node.properties.target = '_blank';
+          node.properties.rel = ['noopener', 'noreferrer'];
+        }
+      }
+      if (node.children) node.children.forEach(walk);
+    };
+    walk(tree);
+  };
+}
+
 export async function renderMarkdown(content) {
   const prepared = applyChatBubbles(content);
 
@@ -179,6 +196,7 @@ export async function renderMarkdown(content) {
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeSanitize, schema)
+    .use(externalLinksInNewTab)
     .use(fixFragmentLinks)
     .use(rehypeHighlight, {
       detect: true,
