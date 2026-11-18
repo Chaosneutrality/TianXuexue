@@ -3,6 +3,9 @@
 import { createContext, useContext, useState, useRef, useEffect, ReactNode } from 'react';
 import { siteConfig } from '../siteConfig';
 
+// 浏览器禁止无交互自动播放时，等这些事件任意发生一次再补播
+const GESTURE_EVENTS = ['pointerdown', 'keydown', 'touchstart', 'wheel'];
+
 // 【增强版 LRC 歌词解析】
 function parseLrc(lrcText: string) {
   if (!lrcText || lrcText.length > 30000) return [];
@@ -79,6 +82,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const [playMode, setPlayMode] = useState<PlayMode>('loop');
 
   const audioRef = useRef<HTMLAudioElement>(null);
+  const autoPlayTried = useRef(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -100,8 +104,14 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           }));
 
         if (isMounted) {
-          if (mergedPlaylist.length > 0) setPlaylist(mergedPlaylist);
-          else setCurrentLyric("云端链路受阻");
+          if (mergedPlaylist.length > 0) {
+            // 进站默认播放《生日快乐》，找不到就从头开始
+            const birthdayIndex = mergedPlaylist.findIndex((song: any) =>
+              String(song.title || '').includes('生日快乐')
+            );
+            if (birthdayIndex > 0) setCurrentIndex(birthdayIndex);
+            setPlaylist(mergedPlaylist);
+          } else setCurrentLyric("云端链路受阻");
           setIsLoading(false);
         }
       } catch (error) {
@@ -151,6 +161,36 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     }
     return () => { isMounted = false; };
   }, [currentIndex, playlist.length]); // 移除 playlist 依赖防止无限循环，只依赖长度
+
+  // 🌟 进站自动播放；被浏览器拦截时，等第一次交互后自动补播
+  useEffect(() => {
+    if (autoPlayTried.current || playlist.length === 0) return;
+    autoPlayTried.current = true;
+
+    const resume = () => {
+      setIsPlaying(true);
+      audioRef.current?.play().catch(() => {});
+      GESTURE_EVENTS.forEach((ev) => document.removeEventListener(ev, resume));
+    };
+
+    const start = () => {
+      const audio = audioRef.current;
+      if (!audio) return;
+      const p = audio.play();
+      if (p && typeof p.then === 'function') {
+        p.then(() => setIsPlaying(true)).catch(() => {
+          setIsPlaying(false);
+          GESTURE_EVENTS.forEach((ev) => document.addEventListener(ev, resume, { passive: true }));
+        });
+      }
+    };
+
+    const timer = setTimeout(start, 400);
+    return () => {
+      clearTimeout(timer);
+      GESTURE_EVENTS.forEach((ev) => document.removeEventListener(ev, resume));
+    };
+  }, [playlist.length]);
 
   // 🌟 4. 同步音量到 audio 元素
   useEffect(() => {
