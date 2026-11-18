@@ -104,14 +104,9 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           }));
 
         if (isMounted) {
-          if (mergedPlaylist.length > 0) {
-            // 进站默认播放《生日快乐》，找不到就从头开始
-            const birthdayIndex = mergedPlaylist.findIndex((song: any) =>
-              String(song.title || '').includes('生日快乐')
-            );
-            if (birthdayIndex > 0) setCurrentIndex(birthdayIndex);
-            setPlaylist(mergedPlaylist);
-          } else setCurrentLyric("云端链路受阻");
+          // 进站永远从歌单第一首开始播放
+          if (mergedPlaylist.length > 0) setPlaylist(mergedPlaylist);
+          else setCurrentLyric("云端链路受阻");
           setIsLoading(false);
         }
       } catch (error) {
