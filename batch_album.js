@@ -143,6 +143,16 @@ function run() {
   writeAlbums(BLOG_ALBUMS, albums);
   writeAlbums(MGR_ALBUMS, albums);
 
+  // 同步图片到控制台的 public 目录，让控制台的照片墙也能显示
+  const mgrDir = path.join(ROOT, 'my-blog-manager', 'public', 'albums', FOLDER);
+  try {
+    fs.mkdirSync(path.dirname(mgrDir), { recursive: true });
+    fs.cpSync(srcDir, mgrDir, { recursive: true, force: true });
+    console.log('   已同步图片到控制台 public：' + mgrDir);
+  } catch (e) {
+    console.log('   ⚠️ 同步图片到控制台失败（不影响线上）：' + e.message);
+  }
+
   console.log('   照片文件夹：' + FOLDER);
   console.log('   本次新增 ' + added + ' 张（文件夹内 ' + files.length + ' 张，' + totalMB.toFixed(1) + ' MB）');
   console.log('   相册现有 ' + total + ' 张');

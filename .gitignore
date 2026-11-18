@@ -5,3 +5,9 @@
 __pycache__/
 *.py[cod]
 /tests/tmp*/
+
+# S.EE API 令牌，切勿提交
+s_ee_token.txt
+
+# 控制台里的相册图片副本（本地预览用，不入库）
+my-blog-manager/public/albums/

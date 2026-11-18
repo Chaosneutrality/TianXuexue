@@ -8,137 +8,137 @@ export const albums: Album[] = [
     "id": "album_1795010981643",
     "photos": [
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E1.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E1.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E1.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E1.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E2.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E2.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E2.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E2.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E3.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E3.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E3.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E3.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E4.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E4.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E4.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E4.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E5.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E5.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E5.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E5.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E6.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E6.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E6.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E6.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E7.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E7.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E7.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E7.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E8.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E8.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E8.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E8.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E9.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E9.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E9.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E9.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E10.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E10.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E10.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E10.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E11.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E11.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E11.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E11.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E12.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E12.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E12.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E12.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E13.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E13.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E13.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E13.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E14.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E14.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E14.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E14.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E15.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E15.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E15.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E15.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E16.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E16.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E16.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E16.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E17.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E17.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E17.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E17.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E18.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E18.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E18.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E18.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E19.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E19.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E19.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E19.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E20.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E20.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E20.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E20.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E21.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E21.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E21.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E21.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E22.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E22.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E22.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E22.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E23.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E23.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E23.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E23.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E24.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E24.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E24.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E24.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E25.png",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E25.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E25.png",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E25.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E26.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E26.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E26.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E26.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E27.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E27.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E27.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E27.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E28.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E28.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E28.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E28.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E29.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E29.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E29.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E29.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E30.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E30.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E30.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E30.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E31.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E31.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E31.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E31.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E7%85%A7/%E7%BE%8E32.jpg",
-        "thumb": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E32.jpg"
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E32.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E32.jpg"
       }
     ],
     "date": "2026-11-18",
     "description": "我们天雪雪世界第一！",
-    "cover": "/albums/%E7%BE%8E%E7%85%A7/thumbs/%E7%BE%8E1.jpg"
+    "cover": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E1.jpg"
   },
   {
     "description": "",
