@@ -106,5 +106,82 @@ export const albums: Album[] = [
     ],
     "date": "2026-11-18",
     "description": "我们天雪雪世界第一！"
+  },
+  {
+    "description": "123",
+    "title": "123",
+    "id": "album_1795012243290",
+    "photos": [
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E9%87%91%E6%88%92%E6%8C%87.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F1.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F2.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F3.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F4.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F5.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F6.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F7.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F8.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F9.png"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F10.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F11.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F12.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F13.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F14.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F15.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F16.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F17.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F18.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F19.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F20.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F21.jpg"
+      },
+      {
+        "url": "/albums/%E7%94%9F%E6%B4%BB/%E6%88%91%E7%9A%84%E5%BF%83%E5%9C%A8%E4%B8%8B%E9%9B%A8.jpg"
+      }
+    ],
+    "date": "2026-11-18"
   }
 ];
