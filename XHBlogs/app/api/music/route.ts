@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+// 歌曲多时并发请求较多，给函数更长的执行时间
+export const maxDuration = 60
+
 const NET_EASE_HEADERS = {
   'User-Agent':
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
@@ -17,7 +20,7 @@ async function resolvePlayUrl(songId: string): Promise<string> {
       headers: NET_EASE_HEADERS,
       redirect: 'manual',
       cache: 'no-store',
-      signal: AbortSignal.timeout(6000),
+      signal: AbortSignal.timeout(4000),
     })
     const location = res.headers.get('location')
     if (location && /^https?:\/\//i.test(location)) return location
@@ -53,11 +56,11 @@ export async function GET(request: NextRequest) {
         const [detailRes, lrcRes] = await Promise.all([
           fetch(
             `https://music.163.com/api/song/detail/?id=${songId}&ids=[${songId}]`,
-            { headers: NET_EASE_HEADERS, signal: AbortSignal.timeout(6000) },
+            { headers: NET_EASE_HEADERS, signal: AbortSignal.timeout(4000) },
           ),
           fetch(
             `https://music.163.com/api/song/lyric?id=${songId}&lv=-1&kv=-1&tv=-1`,
-            { headers: NET_EASE_HEADERS, signal: AbortSignal.timeout(6000) },
+            { headers: NET_EASE_HEADERS, signal: AbortSignal.timeout(4000) },
           ).catch(() => null),
         ])
 
@@ -99,5 +102,7 @@ export async function GET(request: NextRequest) {
     }),
   )
 
-  return NextResponse.json(results)
+  return NextResponse.json(results, {
+    headers: { 'Cache-Control': 'public, s-maxage=600, stale-while-revalidate=86400' },
+  })
 }
