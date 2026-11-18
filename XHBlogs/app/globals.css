@@ -132,6 +132,11 @@ input[type=range]::-webkit-slider-thumb {
   color: #1a1a1a !important;
 }
 
+/* 正文图片可以点开放大：光标提示 */
+.prose img {
+  cursor: zoom-in;
+}
+
 /* 气泡内部不要再有多余的段落间距 */
 .prose .chat-left p,
 .prose .chat-right p {

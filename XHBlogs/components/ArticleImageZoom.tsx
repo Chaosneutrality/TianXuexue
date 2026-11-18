@@ -2,24 +2,34 @@
 
 import { useEffect, useState } from 'react';
 
-// 正文图片点击放大：点图弹全屏，点背景 / 右上角 × / Esc 关闭
-export default function ArticleImageZoom({ selector = '.prose img' }: { selector?: string }) {
+// 正文图片点击放大（事件委托版）。
+// 不依赖"挂载时图片已存在"，也不受图片后来才渲染的影响；
+// 挂载成功后会在 <html> 上打 data-image-zoom="on"，便于自检。
+export default function ArticleImageZoom() {
   const [src, setSrc] = useState<string | null>(null);
 
   useEffect(() => {
-    const imgs = Array.from(document.querySelectorAll<HTMLImageElement>(selector));
-    const onClick = (event: Event) => {
-      const img = event.currentTarget as HTMLImageElement;
-      if (img.closest('a')) return; // 被链接包住的图片不拦截点击
+    document.documentElement.dataset.imageZoom = 'on';
+
+    const onClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (!target) return;
+      const img = target.closest('.prose img') as HTMLImageElement | null;
+      if (!img) return;
+      if (img.closest('a')) return; // 图片外面有链接时，交给链接处理
       const big = img.currentSrc || img.src;
-      if (big) setSrc(big);
+      if (big) {
+        event.preventDefault();
+        setSrc(big);
+      }
     };
-    imgs.forEach((img) => {
-      img.style.cursor = 'zoom-in';
-      img.addEventListener('click', onClick);
-    });
-    return () => imgs.forEach((img) => img.removeEventListener('click', onClick));
-  }, [selector]);
+
+    document.addEventListener('click', onClick);
+    return () => {
+      document.removeEventListener('click', onClick);
+      delete document.documentElement.dataset.imageZoom;
+    };
+  }, []);
 
   useEffect(() => {
     if (!src) return;
@@ -42,7 +52,7 @@ export default function ArticleImageZoom({ selector = '.prose img' }: { selector
       onClick={() => setSrc(null)}
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-[120] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out animate-fade-in"
+      className="fixed inset-0 z-[120] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out"
     >
       <img
         src={src}
