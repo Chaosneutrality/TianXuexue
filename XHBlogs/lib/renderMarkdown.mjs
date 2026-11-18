@@ -112,25 +112,58 @@ function applyChatBubbles(markdown) {
   const leftCount = marks.filter((m) => m === 'left').length;
   const defaultSide = rightCount >= leftCount ? 'left' : 'right';
 
+  // 行尾 + 表示"连接下一句"：合并进同一个气泡，内部用 <br> 换行
+  const CONTINUES = /[+＋]$/;
+
   const out = [];
-  for (const line of lines) {
-    const text = line.trim();
+  let i = 0;
+  while (i < lines.length) {
+    const raw = lines[i];
+    const text = raw.trim();
+
     if (text === '') {
       out.push('');
+      i++;
       continue;
     }
     if (NOT_CHAT_LINE.test(text)) {
-      out.push(line);
+      out.push(raw);
+      i++;
       continue;
     }
-    const mark = splitMark(text);
-    const side = mark ? mark.side : defaultSide;
-    const body = unescapeInline(mark ? mark.text : text);
 
-    if (IMAGE_ONLY.test(body)) {
-      out.push(`<div class="chat-${side} chat-image">${inlineToHtml(body)}</div>`);
+    // 收集这一句（可能由多行用 + 连成）
+    const parts = [];
+    let side = null;
+    let keepGoing = true;
+    while (keepGoing && i < lines.length) {
+      const cur = lines[i].trim();
+      if (cur === '') {
+        i++;
+        continue; // 加号续行时允许跨过空行
+      }
+      if (NOT_CHAT_LINE.test(cur)) break;
+
+      const cont = CONTINUES.test(cur);
+      const piece = cont ? cur.slice(0, -1).trim() : cur;
+      const mark = splitMark(piece);
+      if (mark) side = mark.side;
+      parts.push(unescapeInline(mark ? mark.text : piece));
+
+      i++;
+      keepGoing = cont;
+      if (keepGoing) {
+        while (i < lines.length && lines[i].trim() === '') i++;
+      }
+    }
+
+    const finalSide = side || defaultSide;
+    const joined = parts.join('<br>');
+
+    if (parts.length > 0 && parts.every((p) => IMAGE_ONLY.test(p))) {
+      out.push(`<div class="chat-${finalSide} chat-image">${inlineToHtml(joined)}</div>`);
     } else {
-      out.push(`<div class="chat-${side}">${inlineToHtml(body)}</div>`);
+      out.push(`<div class="chat-${finalSide}">${inlineToHtml(joined)}</div>`);
     }
   }
   return out.join('\n\n');
