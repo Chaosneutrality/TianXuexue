@@ -127,6 +127,20 @@ function applyChatBubbles(markdown) {
       i++;
       continue;
     }
+    // 单独一行只写 r / l：表示"上面那块"放右/左（常用于给图片定边），本身不生成气泡
+    const soloMark = text.match(/^([rl])$/i);
+    if (soloMark) {
+      const soloSide = soloMark[1].toLowerCase() === 'r' ? 'right' : 'left';
+      for (let k = out.length - 1; k >= 0; k--) {
+        if (typeof out[k] === 'string' && out[k].startsWith('<div class="chat-')) {
+          out[k] = out[k].replace(/^<div class="chat-(left|right)/, `<div class="chat-${soloSide}`);
+          break;
+        }
+      }
+      i++;
+      continue;
+    }
+
     if (NOT_CHAT_LINE.test(text)) {
       out.push(raw);
       i++;
