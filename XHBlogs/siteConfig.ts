@@ -22,10 +22,10 @@ export const siteConfig = {
   useGradient: false,
   themeColors: ["#a18cd1", "#fbc2eb", "#a1c4fd", "#c2e9fb"], // 呼吸流动的颜色组合
 // 修改这里：变成图片数组
-  bgImages: ["https://bu.dusays.com/2026/03/24/69c1e38b4c370.jpg", "https://bu.dusays.com/2026/03/24/69c26fe4acdb5.jpg", "https://bu.dusays.com/2026/03/24/69c26fe4d9486.jpg"],
+  bgImages: ["/bg/bg1.jpg","/bg/bg2.jpg","/bg/bg3.jpg","/bg/bg4.jpg"],
 
   // 🌟 壁纸分组系统：前台轮播「激活分组」内的图片（保持 JSON 格式，便于后台解析）
-  bgGroups: [{"id": "default", "name": "默认", "images": ["https://files.seeusercontent.com/2026/11/19/8fTq/wallhaven-ney5jr.jpg", "https://files.seeusercontent.com/2026/11/19/5oDc/wallhaven-lyzdkl.png", "https://files.seeusercontent.com/2026/11/19/9xvL/wallhaven-w5q36x.png", "https://files.seeusercontent.com/2026/11/19/dj0S/wallhaven-8gd2gy.jpg"]}],
+  bgGroups: [{"id": "default", "name": "默认", "images": ["/bg/bg1.jpg","/bg/bg2.jpg","/bg/bg3.jpg","/bg/bg4.jpg"]}],
   activeBgGroup: "default",
 
   // 4. 文章默认封面图 (当 Markdown 没写 cover 时显示)
