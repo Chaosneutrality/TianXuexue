@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { siteConfig } from '../siteConfig';
 
 // 全站访问「暗号」输入页
@@ -8,17 +8,27 @@ export default function LoginGate() {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (loading) return;
+
+    // 用输入框里的真实值，避免浏览器自动填充不触发 onChange 导致读不到
+    const password = (inputRef.current?.value ?? value).trim();
+    if (!password) {
+      setError('先输入暗号哦');
+      inputRef.current?.focus();
+      return;
+    }
+
     setLoading(true);
     setError('');
     try {
       const res = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: value }),
+        body: JSON.stringify({ password }),
       });
       if (res.ok) {
         window.location.reload();
@@ -51,6 +61,7 @@ export default function LoginGate() {
         <p className="mt-2 text-center text-sm text-slate-300/80">请输入暗号</p>
 
         <input
+          ref={inputRef}
           type="password"
           value={value}
           onChange={(e) => setValue(e.target.value)}
@@ -63,8 +74,7 @@ export default function LoginGate() {
 
         <button
           type="submit"
-          disabled={loading || value.trim().length === 0}
-          className="mt-5 w-full rounded-2xl bg-indigo-500 py-3 text-sm font-black text-white shadow-lg shadow-indigo-900/40 transition hover:bg-indigo-400 disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-5 w-full rounded-2xl bg-indigo-500 py-3 text-sm font-black text-white shadow-lg shadow-indigo-900/40 transition hover:bg-indigo-400 active:scale-[0.99] cursor-pointer"
         >
           {loading ? '验证中…' : '进 入'}
         </button>
