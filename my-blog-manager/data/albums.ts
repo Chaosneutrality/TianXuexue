@@ -146,6 +146,10 @@ export const albums: Album[] = [
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E34.jpg",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E34.jpg"
+      },
+      {
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E35.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E35.jpg"
       }
     ],
     "date": "2026-11-19",
