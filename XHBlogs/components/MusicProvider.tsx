@@ -86,36 +86,66 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let isMounted = true;
-    const fetchMusicData = async () => {
+
+    const toSong = (song: any) => ({
+      id: song.id || Math.random().toString(),
+      title: song.name || '未知歌曲',
+      artist: song.artist || song.author || '未知歌手',
+      cover: song.cover || song.pic || '/uploads/avatar.jpg',
+      src: song.url,
+      lrcUrl: null,
+      lyrics: song.lrc ? parseLrc(song.lrc) : []
+    });
+
+    const ids: string[] = siteConfig.cloudMusicIds || [];
+
+    const fetchBatch = async (batch: string[]) => {
+      const res = await fetch(`/api/music?ids=${batch.join(',')}`);
+      const raw = await res.json();
+      return (raw || [])
+        .filter((song: any) => song && song.url && !song.error)
+        .map(toSong);
+    };
+
+    const run = async () => {
+      if (ids.length === 0) {
+        setIsLoading(false);
+        return;
+      }
+
+      // 🌟 第一步：只加载第一首，进站立刻能听到《生日快乐》
       try {
-        const res = await fetch(`/api/music?ids=${siteConfig.cloudMusicIds.join(',')}`);
-        const rawResults = await res.json();
-
-        const mergedPlaylist = rawResults
-          .filter((song: any) => song && song.url && !song.error)
-          .map((song: any) => ({
-            id: song.id || Math.random().toString(),
-            title: song.name || '未知歌曲',
-            artist: song.artist || song.author || '未知歌手',
-            cover: song.cover || song.pic || 'https://bu.dusays.com/2026/03/24/69c24230a5ff8.jpg',
-            src: song.url,
-            lrcUrl: null,
-            lyrics: song.lrc ? parseLrc(song.lrc) : []
-          }));
-
+        const first = await fetchBatch([ids[0]]);
+        if (!isMounted) return;
+        if (first.length > 0) {
+          setPlaylist(first);
+        } else {
+          setCurrentLyric('云端链路受阻');
+        }
+        setIsLoading(false);
+      } catch (error) {
         if (isMounted) {
-          // 进站永远从歌单第一首开始播放
-          if (mergedPlaylist.length > 0) setPlaylist(mergedPlaylist);
-          else setCurrentLyric("云端链路受阻");
+          setCurrentLyric('网络初始化失败');
           setIsLoading(false);
         }
-      } catch (error) {
-        if (isMounted) { setCurrentLyric("网络初始化失败"); setIsLoading(false); }
+      }
+
+      // 🌟 第二步：4 秒后（页面已经稳定）再后台补齐其余歌曲
+      if (ids.length > 1) {
+        setTimeout(async () => {
+          if (!isMounted) return;
+          try {
+            const rest = await fetchBatch(ids.slice(1));
+            if (!isMounted) return;
+            if (rest.length > 0) setPlaylist(prev => [...prev, ...rest]);
+          } catch (error) {
+            /* 静默失败，不影响正在播放的歌 */
+          }
+        }, 4000);
       }
     };
 
-    if (siteConfig.cloudMusicIds?.length > 0) fetchMusicData();
-    else setIsLoading(false);
+    run();
 
     return () => { isMounted = false; };
   }, []);
