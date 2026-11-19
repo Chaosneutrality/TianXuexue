@@ -75,6 +75,10 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                   document.documentElement.classList.add('splash-seen');
                 }
               } catch (e) {}
+              // 兜底：无论开场动画是否成功，3.5 秒后强制显示内容，避免白屏
+              setTimeout(function () {
+                try { document.documentElement.classList.add('splash-seen'); } catch (e) {}
+              }, 3500);
             `
           }}
         />
