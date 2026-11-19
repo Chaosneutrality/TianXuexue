@@ -1,5 +1,5 @@
 // 🛡️ 本文件由 XingHuiSama 控制台自动生成，请勿手动修改
-export interface Photo { url: string; caption?: string; }
+export interface Photo { url: string; caption?: string; thumb?: string; }
 export interface Album { id: string; title: string; description: string; cover: string; date: string; photos: Photo[]; }
 
 export const albums: Album[] = [
@@ -13,7 +13,8 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E2.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E2.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E2.jpg",
+        "caption": "观世音"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E3.png",
@@ -29,7 +30,8 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E6.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E6.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E6.jpg",
+        "caption": "初见"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E7.jpg",
@@ -65,7 +67,8 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E15.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E15.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E15.jpg",
+        "caption": "一种蛇的感觉"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E16.jpg",
@@ -85,7 +88,8 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E20.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E20.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E20.jpg",
+        "caption": "美腿"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E21.png",
@@ -134,9 +138,17 @@ export const albums: Album[] = [
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E32.jpg",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E32.jpg"
+      },
+      {
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E33.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E33.jpg"
+      },
+      {
+        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E34.jpg",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E34.jpg"
       }
     ],
-    "date": "2026-11-18",
+    "date": "2026-11-19",
     "description": "我们天雪雪世界第一！",
     "cover": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E1.jpg"
   },
@@ -381,7 +393,7 @@ export const albums: Album[] = [
   },
   {
     "description": "喵",
-    "title": "我的年糕",
+    "title": "年糕",
     "id": "album_1795060001964",
     "cover": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190241_5976_192.jpg",
     "photos": [
