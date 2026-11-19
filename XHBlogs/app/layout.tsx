@@ -46,7 +46,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   if (!authed) {
     return (
-      <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} h-full antialiased`} suppressHydrationWarning>
+      <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} h-full antialiased`} style={{ backgroundColor: '#0b1220' }} suppressHydrationWarning>
         <body className="w-screen overflow-x-hidden min-h-full flex flex-col relative bg-slate-950 font-serif">
           <LoginGate />
         </body>
@@ -55,8 +55,9 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   }
 
   return (
-    <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} h-full antialiased`} style={{ backgroundColor: '#0b1220' }} suppressHydrationWarning>
       <head>
+        <link rel="preload" as="image" href="/bg/bg1.jpg" />
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
