@@ -57,31 +57,14 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
-        <style
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: `
-              #app-mount-root { opacity: 0; visibility: hidden; pointer-events: none; }
-              html.splash-seen #app-mount-root { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
-            `
-          }}
-        />
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (sessionStorage.getItem('hasSeenSplash') === 'true') {
-                  document.documentElement.classList.add('splash-seen');
-                }
+                document.documentElement.classList.add('splash-seen');
+                sessionStorage.setItem('hasSeenSplash', 'true');
               } catch (e) {}
-              // 兜底：无论开场动画是否成功，5 秒后强制显示内容，避免白屏
-              setTimeout(function () {
-                try {
-                  sessionStorage.setItem('hasSeenSplash', 'true');
-                  document.documentElement.classList.add('splash-seen');
-                } catch (e) {}
-              }, 5000);
             `
           }}
         />
@@ -89,8 +72,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
       <body className="w-screen overflow-x-hidden min-h-full flex flex-col relative transition-colors duration-1000 bg-slate-50 dark:bg-slate-950 font-serif">
         <ThemeProvider>
-
-          <SplashScreen />
 
           <MusicProvider>
             <div id="app-mount-root" className="flex-1 flex flex-col transition-opacity duration-1000">
