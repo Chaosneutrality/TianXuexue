@@ -1,5 +1,5 @@
 // 🛡️ 本文件由 XingHuiSama 控制台自动生成，请勿手动修改
-export interface Photo { url: string; caption?: string; thumb?: string; }
+export interface Photo { url: string; caption?: string; }
 export interface Album { id: string; title: string; description: string; cover: string; date: string; photos: Photo[]; }
 
 export const albums: Album[] = [
@@ -141,29 +141,34 @@ export const albums: Album[] = [
     "cover": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E1.jpg"
   },
   {
-    "description": "",
-    "title": "生活印迹",
+    "description": "人与人之间要有一些美好的瞬间",
+    "title": "在人间",
     "id": "album_1795012243290",
     "photos": [
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E9%87%91%E6%88%92%E6%8C%87.png",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E9%87%91%E6%88%92%E6%8C%87.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E9%87%91%E6%88%92%E6%8C%87.jpg",
+        "caption": "上了年纪就喜欢黄金，手，脖子，胳膊都上了"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F1.png",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F1.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F1.jpg",
+        "caption": "我这驾照太有水份了"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F2.png",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F2.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F2.jpg",
+        "caption": "儿童脚趾"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F3.png",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F3.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F3.jpg",
+        "caption": "看的什么电影呢？"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F4.png",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F4.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F4.jpg",
+        "caption": "捂脸是因为害羞吗？"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F5.png",
@@ -171,74 +176,80 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F6.png",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F6.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F6.jpg",
+        "caption": "小心，被子里有人"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F7.png",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F7.jpg"
-      },
-      {
-        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F8.png",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F8.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F7.jpg",
+        "caption": "学累了，先睡个觉吧"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F9.png",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F9.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F9.jpg",
+        "caption": "这个是我的好看杯子，可爱吗"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F10.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F10.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F10.jpg",
+        "caption": "女孩不用太漂亮，会玩西施就行！"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F11.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F11.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F11.jpg",
+        "caption": "这个系列的题我全对"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F12.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F12.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F12.jpg",
+        "caption": "我的三件套早餐"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F13.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F13.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F13.jpg",
+        "caption": "得黄金百，不如得雪雪一诺"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F14.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F14.jpg"
-      },
-      {
-        "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F15.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F15.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F14.jpg",
+        "caption": "经常吃"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F16.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F16.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F16.jpg",
+        "caption": "和LQL合“影”"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F17.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F17.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F17.jpg",
+        "caption": "一种焦虑：正确率低了就想买笔和书"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F18.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F18.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F18.jpg",
+        "caption": "一个是你一个是我"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F19.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F19.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F19.jpg",
+        "caption": "这个纯属装着写"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E7%94%9F21.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F21.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E7%94%9F21.jpg",
+        "caption": "下雪了"
       },
       {
         "url": "/albums/%E7%94%9F%E6%B4%BB/%E6%88%91%E7%9A%84%E5%BF%83%E5%9C%A8%E4%B8%8B%E9%9B%A8.jpg",
-        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E6%88%91%E7%9A%84%E5%BF%83%E5%9C%A8%E4%B8%8B%E9%9B%A8.jpg"
+        "thumb": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E6%88%91%E7%9A%84%E5%BF%83%E5%9C%A8%E4%B8%8B%E9%9B%A8.jpg",
+        "caption": "我的心也一直在下雨"
       }
     ],
     "date": "2026-11-18",
     "cover": "/albums/%E7%94%9F%E6%B4%BB/thumbs/%E9%87%91%E6%88%92%E6%8C%87.jpg"
   },
   {
-    "description": "景色",
+    "description": "还是在家舒服",
     "title": "地球旅途",
     "id": "album_1795012763559",
     "photos": [
@@ -248,7 +259,8 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF2.png",
-        "thumb": "/albums/%E6%99%AF%E8%89%B2/thumbs/%E6%99%AF2.jpg"
+        "thumb": "/albums/%E6%99%AF%E8%89%B2/thumbs/%E6%99%AF2.jpg",
+        "caption": "小爱心"
       },
       {
         "url": "/albums/%E6%99%AF%E8%89%B2/%E6%99%AF3.png",
@@ -295,7 +307,7 @@ export const albums: Album[] = [
     "cover": "/albums/%E6%99%AF%E8%89%B2/thumbs/%E6%99%AF1.jpg"
   },
   {
-    "description": "我的大学",
+    "description": "也是如愿以偿的来我们学校了",
     "title": "我的大学",
     "id": "album_1795060000436",
     "cover": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160633_8956_192.jpg",
@@ -368,8 +380,8 @@ export const albums: Album[] = [
     "date": "2026-11-19"
   },
   {
-    "description": "猫",
-    "title": "猫",
+    "description": "喵",
+    "title": "我的年糕",
     "id": "album_1795060001964",
     "cover": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190241_5976_192.jpg",
     "photos": [
@@ -379,11 +391,13 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190416_5982_192.jpg",
-        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190416_5982_192.jpg"
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190416_5982_192.jpg",
+        "caption": "年糕很可爱，老是趴在他写的书法纸上睡觉"
       },
       {
         "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190418_5983_192.jpg",
-        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190418_5983_192.jpg"
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190418_5983_192.jpg",
+        "caption": "沙发垫子也是我买的"
       },
       {
         "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190420_5984_192.jpg",
@@ -399,7 +413,8 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190423_5987_192.jpg",
-        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190423_5987_192.jpg"
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190423_5987_192.jpg",
+        "caption": "我买的四件套"
       },
       {
         "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190424_5988_192.jpg",
@@ -415,7 +430,8 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190427_5991_192.jpg",
-        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190427_5991_192.jpg"
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190427_5991_192.jpg",
+        "caption": "这是刚来的时候，还很胆怯"
       }
     ],
     "date": "2026-11-19"
