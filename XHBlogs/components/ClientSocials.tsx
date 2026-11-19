@@ -30,9 +30,36 @@ function SocialBtn({ type, url, onClick }: { type: string, url?: string, onClick
 }
 
 export default function ClientSocials() {
-  const copyToClipboard = (text: string, label: string) => {
-    navigator.clipboard.writeText(text);
-    alert(`✨ ${label}已复制到剪贴板: ${text}`);
+  const copyToClipboard = async (text: string, label: string) => {
+    if (!text) {
+      alert(`暂未设置${label}`);
+      return;
+    }
+    let copied = false;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      }
+    } catch {
+      copied = false;
+    }
+    if (!copied) {
+      // 非 https 或旧浏览器的兜底方案
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        copied = document.execCommand('copy');
+        document.body.removeChild(ta);
+      } catch {
+        copied = false;
+      }
+    }
+    alert(`✨ ${label}：${text}\n${copied ? '（已复制，可直接粘贴）' : '（长按选中复制）'}`);
   };
 
   return (
