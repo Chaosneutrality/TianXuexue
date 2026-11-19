@@ -1,5 +1,5 @@
 // 🛡️ 本文件由 XingHuiSama 控制台自动生成，请勿手动修改
-export interface Photo { url: string; caption?: string; thumb?: string; }
+export interface Photo { url: string; caption?: string; }
 export interface Album { id: string; title: string; description: string; cover: string; date: string; photos: Photo[]; }
 
 export const albums: Album[] = [
@@ -9,47 +9,48 @@ export const albums: Album[] = [
     "photos": [
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E1.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E1.jpg",
-        "caption": "天生丽质难自弃"
+        "caption": "天生丽质难自弃",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E1.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E2.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E2.jpg",
-        "caption": "观世音"
+        "caption": "观世音",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E2.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E3.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E3.jpg",
-        "caption": "小姐！老爷让你速速回府！"
+        "caption": "小姐！老爷让你速速回府！",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E3.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E4.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E4.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E4.jpg",
+        "caption": "你自由了，重新穿上喜欢的小裙子吧"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E5.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E5.jpg",
-        "caption": "最贵的大衣 "
+        "caption": "最贵的大衣 ",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E5.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E6.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E6.jpg",
-        "caption": "初见"
+        "caption": "初见",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E6.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E7.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E7.jpg",
-        "caption": "你的眼睛像星星亮晶晶"
+        "caption": "你的眼睛像星星亮晶晶",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E7.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E8.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E8.jpg",
-        "caption": "神奇的拍摄手法"
+        "caption": "神奇的拍摄手法",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E8.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E9.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E9.jpg",
-        "caption": "感受到了至善至纯的气息"
+        "caption": "感受到了至善至纯的气息",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E9.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E10.jpg",
@@ -61,8 +62,8 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E12.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E12.jpg",
-        "caption": "干干净净的素颜"
+        "caption": "干干净净的素颜",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E12.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E13.jpg",
@@ -70,37 +71,38 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E14.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E14.jpg",
-        "caption": "有一张人畜无害的脸是什么体验"
+        "caption": "有一张人畜无害的脸是什么体验",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E14.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E15.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E15.jpg",
-        "caption": "一种蛇的感觉"
+        "caption": "一种蛇的感觉",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E15.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E16.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E16.jpg",
-        "caption": "看起来好委屈"
+        "caption": "看起来好委屈",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E16.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E17.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E17.jpg",
-        "caption": "“我在给你微笑”"
+        "caption": "“我在给你微笑”",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E17.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E18.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E18.jpg",
-        "caption": "“反正给你拍的，丑你也别笑话我”"
+        "caption": "“反正给你拍的，丑你也别笑话我”",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E18.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E19.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E19.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E19.jpg",
+        "caption": "就这样面无表情的看着你"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E20.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E20.jpg",
-        "caption": "美腿"
+        "caption": "美腿，无需多言",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E20.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E21.png",
@@ -112,24 +114,28 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E23.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E23.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E23.jpg",
+        "caption": "校花"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E24.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E24.jpg",
-        "caption": "看的我不好意思"
+        "caption": "看的我不好意思",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E24.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E25.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E25.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E25.jpg",
+        "caption": ""
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E26.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E26.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E26.jpg",
+        "caption": "“大早晨的肿眼泡”"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E27.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E27.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E27.jpg",
+        "caption": "瑕不掩瑜"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E28.jpg",
@@ -137,16 +143,18 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E29.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E29.jpg",
-        "caption": "女神，小弟膜拜你"
+        "caption": "女神，小弟膜拜你",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E29.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E30.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E30.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E30.jpg",
+        "caption": "“我们这边要下雪了，我直接羽绒服穿起来了”"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E31.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E31.jpg"
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E31.jpg",
+        "caption": "神的颜值"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E32.jpg",
@@ -154,17 +162,18 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E33.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E33.jpg",
-        "caption": "谁家小姑娘？"
+        "caption": "谁家小姑娘？",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E33.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E34.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E34.jpg",
-        "caption": "我见犹怜"
+        "caption": "我见犹怜",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E34.jpg"
       },
       {
         "url": "/albums/美色/美35.jpg",
-        "thumb": "/albums/美色/thumbs/美35.jpg"
+        "thumb": "/albums/美色/thumbs/美35.jpg",
+        "caption": "“就这样emo的躺一会儿”"
       }
     ],
     "date": "2026-11-19",
