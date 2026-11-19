@@ -15,6 +15,9 @@ import CyberCat from '../components/CyberCat';
 import BigFishPet from '../components/BigFishPet';
 import petSelection from '../data/petSelection.json';
 import DanmakuBackground from '../components/DanmakuBackground';
+import { cookies } from 'next/headers';
+import LoginGate from '../components/LoginGate';
+import { AUTH_COOKIE, AUTH_TOKEN } from '../lib/auth';
 
 import MobileBackButton from '../components/MobileBackButton';
 
@@ -37,7 +40,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const cookieStore = await cookies();
+  const authed = cookieStore.get(AUTH_COOKIE)?.value === AUTH_TOKEN;
+
+  if (!authed) {
+    return (
+      <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} h-full antialiased`} suppressHydrationWarning>
+        <body className="w-screen overflow-x-hidden min-h-full flex flex-col relative bg-slate-950 font-serif">
+          <LoginGate />
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
