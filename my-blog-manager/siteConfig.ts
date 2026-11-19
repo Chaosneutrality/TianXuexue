@@ -3,7 +3,7 @@
 export const siteConfig = {
   // 1. 网站标题与博主信息
   title: "天雪雪，祝你生日快乐",
-  faviconUrl: "https://files.seeusercontent.com/2026/11/17/y2pN/f18186a.jpg",
+  faviconUrl: "/uploads/avatar.jpg",
   authorName: "不可爱雪",
   bio: "从天堂坠落到地球的天使。\n近期正埋头备考人间的公务员。",
 
@@ -15,7 +15,7 @@ export const siteConfig = {
   navAfter: "秘密空间",
 
   // 2. 头像设置 (支持网络链接，或将图片放入 public 文件夹后使用 "/me.jpg")
-  avatarUrl: "https://files.seeusercontent.com/2026/11/17/y2pN/f18186a.jpg",
+  avatarUrl: "/uploads/avatar.jpg",
 
   // 3. 网站背景设置 (二选一)
   // 如果想用纯图片背景，请在下面 bgImage 写路径，并将 useGradient 设为 false
@@ -74,6 +74,6 @@ export const siteConfig = {
     maxOutputTokens: 150,
     temperature: 0.85,
   },
-  friendLinkApplyFormat: "名称：天雪雪の神秘空间\n简介：今天我也要学习！\n链接：https://xue-6oxs.vercel.app\n头像：https://files.seeusercontent.com/2026/11/17/y2pN/f18186a.jpg",
+  friendLinkApplyFormat: "名称：天雪雪の神秘空间\n简介：今天我也要学习！\n链接：https://xue-6oxs.vercel.app\n头像：/uploads/avatar.jpg",
   enableLevelSystem: false,
 };

@@ -3,7 +3,7 @@ title: 关于我
 date: '2026-03-31 18:09:35'
 tags: []
 mood: ''
-cover: https://files.seeusercontent.com/2026/11/17/4iAb/a3128ce.jpg
+cover: /uploads/about-cover.jpg
 description: ''
 ---
 
