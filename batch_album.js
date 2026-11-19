@@ -74,6 +74,43 @@ function existingTitles() {
   return readAlbums(BLOG_ALBUMS).map((a) => a.title);
 }
 
+// 找出"文件夹里有、但没有任何相册引用"的图片（通常是控制台删过但文件没删）
+function findOrphans(albums) {
+  const used = new Set();
+  for (const album of albums) {
+    for (const photo of album.photos || []) {
+      for (const u of [photo.url, photo.thumb]) {
+        if (!u) continue;
+        const m = String(u).match(/^\/albums\/([^/]+)\/(.+)$/);
+        if (!m) continue;
+        const folder = decodeURIComponent(m[1]);
+        const name = decodeURIComponent(m[2]);
+        used.add(folder + '/' + name);
+      }
+    }
+  }
+
+  const orphans = [];
+  if (!fs.existsSync(BASE_DIR)) return orphans;
+
+  for (const folder of fs.readdirSync(BASE_DIR)) {
+    const dir = path.join(BASE_DIR, folder);
+    if (!fs.statSync(dir).isDirectory()) continue;
+    for (const sub of ['', 'thumbs']) {
+      const dirPath = sub ? path.join(dir, sub) : dir;
+      if (!fs.existsSync(dirPath)) continue;
+      for (const f of fs.readdirSync(dirPath)) {
+        const full = path.join(dirPath, f);
+        if (!fs.statSync(full).isFile() || !IMAGE_EXT.test(f)) continue;
+        const key = sub ? folder + '/' + sub + '/' + f : folder + '/' + f;
+        if (used.has(key)) continue;
+        orphans.push({ key, full, size: fs.statSync(full).size });
+      }
+    }
+  }
+  return orphans;
+}
+
 function writeAlbums(file, albums) {
   const head = [
     '// 🛡️ 本文件由 XingHuiSama 控制台自动生成，请勿手动修改',
@@ -181,6 +218,25 @@ function run() {
     const titles = existingTitles();
     console.log('  现在已有的相册：' + (titles.length ? titles.map((t) => '《' + t + '》').join('、') : '（还没有）'));
     console.log('');
+
+    // 🔍 运行前检查：有没有"相册里删了、但文件夹还留着"的图片
+    const orphans = findOrphans(readAlbums(BLOG_ALBUMS));
+    if (orphans.length > 0) {
+      const mb = orphans.reduce((s, o) => s + o.size, 0) / 1024 / 1024;
+      console.log('  ⚠️  发现 ' + orphans.length + ' 个已不在相册中的孤立图片（共 ' + mb.toFixed(2) + ' MB）：');
+      orphans.slice(0, 12).forEach((o) => console.log('       ' + o.key));
+      if (orphans.length > 12) console.log('       …… 还有 ' + (orphans.length - 12) + ' 个');
+      console.log('');
+      console.log('  这些多半是你在控制台删过、但文件夹里没删的；');
+      console.log('  如果不删除，下面生成相册时它们会被重新加回来。');
+      const ans = (await ask('  是否先删除这些孤立文件？(y = 删除 / 直接回车 = 保留): ')).toLowerCase();
+      if (ans === 'y' || ans === 'yes') {
+        for (const o of orphans) fs.unlinkSync(o.full);
+        console.log('  🗑️  已删除 ' + orphans.length + ' 个文件，释放 ' + mb.toFixed(2) + ' MB\n');
+      } else {
+        console.log('  已保留（它们会被重新加进相册）\n');
+      }
+    }
   }
 
   if (!ALBUM_TITLE) {
