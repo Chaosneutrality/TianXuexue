@@ -1,5 +1,5 @@
 // 🛡️ 本文件由 XingHuiSama 控制台自动生成，请勿手动修改
-export interface Photo { url: string; caption?: string; }
+export interface Photo { url: string; caption?: string; thumb?: string; }
 export interface Album { id: string; title: string; description: string; cover: string; date: string; photos: Photo[]; }
 
 export const albums: Album[] = [
@@ -293,5 +293,131 @@ export const albums: Album[] = [
     ],
     "date": "2026-11-18",
     "cover": "/albums/%E6%99%AF%E8%89%B2/thumbs/%E6%99%AF1.jpg"
+  },
+  {
+    "description": "我的大学",
+    "title": "我的大学",
+    "id": "album_1795060000436",
+    "cover": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160633_8956_192.jpg",
+    "photos": [
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160633_8956_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160633_8956_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160635_8957_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160635_8957_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160924_8960_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160924_8960_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160926_8961_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160926_8961_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160927_8962_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017160927_8962_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161309_8965_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161309_8965_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161318_8966_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161318_8966_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161319_8967_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161319_8967_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161320_8968_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161320_8968_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161321_8969_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161321_8969_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161322_8970_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161322_8970_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161324_8971_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161324_8971_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161325_8972_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161325_8972_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161326_8973_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161326_8973_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161611_8981_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161611_8981_192.jpg"
+      },
+      {
+        "url": "/albums/%E5%A4%A7%E5%AD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161615_8982_192.jpg",
+        "thumb": "/albums/%E5%A4%A7%E5%AD%A6/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261017161615_8982_192.jpg"
+      }
+    ],
+    "date": "2026-11-19"
+  },
+  {
+    "description": "猫",
+    "title": "猫",
+    "id": "album_1795060001964",
+    "cover": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190241_5976_192.jpg",
+    "photos": [
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190241_5976_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190241_5976_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190416_5982_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190416_5982_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190418_5983_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190418_5983_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190420_5984_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190420_5984_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190421_5985_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190421_5985_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190422_5986_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190422_5986_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190423_5987_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190423_5987_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190424_5988_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190424_5988_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190425_5989_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190425_5989_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190426_5990_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190426_5990_192.jpg"
+      },
+      {
+        "url": "/albums/%E7%8C%AB/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190427_5991_192.jpg",
+        "thumb": "/albums/%E7%8C%AB/thumbs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20261012190427_5991_192.jpg"
+      }
+    ],
+    "date": "2026-11-19"
   }
 ];
