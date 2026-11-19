@@ -1,5 +1,5 @@
 // 🛡️ 本文件由 XingHuiSama 控制台自动生成，请勿手动修改
-export interface Photo { url: string; caption?: string; }
+export interface Photo { url: string; caption?: string; thumb?: string; }
 export interface Album { id: string; title: string; description: string; cover: string; date: string; photos: Photo[]; }
 
 export const albums: Album[] = [
@@ -161,6 +161,10 @@ export const albums: Album[] = [
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E34.jpg",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E34.jpg",
         "caption": "我见犹怜"
+      },
+      {
+        "url": "/albums/美色/美35.jpg",
+        "thumb": "/albums/美色/thumbs/美35.jpg"
       }
     ],
     "date": "2026-11-19",

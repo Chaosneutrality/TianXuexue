@@ -9,15 +9,17 @@ export const albums: Album[] = [
     "photos": [
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E1.png",
+        "caption": "天生丽质难自弃",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E1.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E2.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E2.jpg",
-        "caption": "观世音"
+        "caption": "观世音",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E2.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E3.png",
+        "caption": "小姐！老爷让你速速回府！",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E3.jpg"
       },
       {
@@ -26,23 +28,27 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E5.png",
+        "caption": "最贵的大衣 ",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E5.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E6.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E6.jpg",
-        "caption": "初见"
+        "caption": "初见",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E6.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E7.jpg",
+        "caption": "你的眼睛像星星亮晶晶",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E7.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E8.jpg",
+        "caption": "神奇的拍摄手法",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E8.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E9.jpg",
+        "caption": "感受到了至善至纯的气息",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E9.jpg"
       },
       {
@@ -55,6 +61,7 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E12.jpg",
+        "caption": "干干净净的素颜",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E12.jpg"
       },
       {
@@ -63,23 +70,27 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E14.jpg",
+        "caption": "有一张人畜无害的脸是什么体验",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E14.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E15.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E15.jpg",
-        "caption": "一种蛇的感觉"
+        "caption": "一种蛇的感觉",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E15.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E16.jpg",
+        "caption": "看起来好委屈",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E16.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E17.png",
+        "caption": "“我在给你微笑”",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E17.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E18.png",
+        "caption": "“反正给你拍的，丑你也别笑话我”",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E18.jpg"
       },
       {
@@ -88,8 +99,8 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E20.png",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E20.jpg",
-        "caption": "美腿"
+        "caption": "美腿",
+        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E20.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E21.png",
@@ -105,6 +116,7 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E24.png",
+        "caption": "看的我不好意思",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E24.jpg"
       },
       {
@@ -125,6 +137,7 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E29.jpg",
+        "caption": "女神，小弟膜拜你",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E29.jpg"
       },
       {
@@ -141,15 +154,17 @@ export const albums: Album[] = [
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E33.jpg",
+        "caption": "谁家小姑娘？",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E33.jpg"
       },
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E34.jpg",
+        "caption": "我见犹怜",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E34.jpg"
       },
       {
-        "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E35.jpg",
-        "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E35.jpg"
+        "url": "/albums/美色/美35.jpg",
+        "thumb": "/albums/美色/thumbs/美35.jpg"
       }
     ],
     "date": "2026-11-19",
