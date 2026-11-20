@@ -31,7 +31,8 @@ export default function LoginGate() {
         body: JSON.stringify({ password }),
       });
       if (res.ok) {
-        window.location.reload();
+        // 带时间戳跳转，避免微信/浏览器缓存返回旧的登录页
+        window.location.replace('/?_=' + Date.now());
         return;
       }
       setError('暗号不对，再想想～');
