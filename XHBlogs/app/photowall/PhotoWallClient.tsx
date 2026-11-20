@@ -116,7 +116,7 @@ export default function PhotoWallClient() {
                            {album.photos[1] && <img src={album.photos[1].thumb || album.photos[1].url} className="w-full h-full object-cover grayscale-[50%]" alt="" loading="lazy" decoding="async" />}
                         </div>
                         <div className="absolute inset-0 bg-white dark:bg-slate-200 rounded-[4px] shadow-2xl border-[6px] border-white dark:border-slate-200 overflow-hidden z-20 transform group-hover:-translate-y-2 group-hover:scale-105 transition-all duration-500 relative">
-                          <img src={album.cover || album.photos?.[0]?.thumb || album.photos?.[0]?.url} alt={album.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" decoding="async" />
+                          <img src={album.cover || album.photos?.[0]?.thumb || album.photos?.[0]?.url} alt={album.title} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" decoding="async" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5">
                             <span className="text-white font-bold text-lg drop-shadow-md translate-y-2 group-hover:translate-y-0 transition-transform duration-500">{album.photos.length} 张照片</span>
                             <span className="text-indigo-300 font-medium text-xs mt-1 drop-shadow-md translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">Click to Open</span>
