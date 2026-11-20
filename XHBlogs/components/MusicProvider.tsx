@@ -83,6 +83,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const autoPlayTried = useRef(false);
+  const playErrorCount = useRef(0);
 
   useEffect(() => {
     let isMounted = true;
@@ -281,6 +282,19 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  // 音频加载失败时自动跳下一首（避免卡在 00:00 无法播放）
+  const handleAudioError = () => {
+    playErrorCount.current += 1;
+    if (playlist.length > 1 && playErrorCount.current <= Math.min(playlist.length, 6)) {
+      setTimeout(() => nextSong(), 400);
+    }
+  };
+
+  const handleLoadedMeta = () => {
+    playErrorCount.current = 0;
+    handleTimeUpdate();
+  };
+
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newProgress = Number(e.target.value);
     setProgress(newProgress);
@@ -319,8 +333,10 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           ref={audioRef}
           src={currentSong.src}
           onTimeUpdate={handleTimeUpdate}
-          onEnded={handleEnded} // 使用我们重写的结束处理
-          onLoadedMetadata={handleTimeUpdate}
+          onEnded={handleEnded}
+          onLoadedMetadata={handleLoadedMeta}
+          onError={handleAudioError}
+          preload="metadata"
         />
       )}
     </MusicContext.Provider>

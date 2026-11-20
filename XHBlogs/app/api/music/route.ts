@@ -23,7 +23,10 @@ async function resolvePlayUrl(songId: string): Promise<string> {
       signal: AbortSignal.timeout(4000),
     })
     const location = res.headers.get('location')
-    if (location && /^https?:\/\//i.test(location)) return location
+    if (location && /^https?:\/\//i.test(location)) {
+      // iOS / iPadOS 会拒绝 https 页面里的 http 音频，统一升级为 https
+      return location.replace(/^http:\/\//i, 'https://')
+    }
   } catch {
     /* 解析失败就用接口地址，让浏览器自己跟随 302 */
   }
