@@ -173,7 +173,7 @@ export const albums: Album[] = [
       {
         "url": "/albums/%E7%BE%8E%E8%89%B2/%E7%BE%8E25.png",
         "thumb": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E25.jpg",
-        "caption": "",
+        "caption": "越看越甜美、越看越可爱",
         "w": 600,
         "h": 805
       },
