@@ -179,13 +179,12 @@ export default function PhotoWallClient() {
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <img src={photo.thumb || photo.url} alt={photo.caption || '照片'} width={photo.w} height={photo.h} className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5">
-                      {photo.caption && (
-                        <p className="text-white font-medium text-sm drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                          {photo.caption}
-                        </p>
-                      )}
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    {photo.caption && (
+                      <p className="px-3 py-2 text-xs leading-relaxed text-slate-700 dark:text-slate-200 bg-white/50 dark:bg-slate-900/50 border-t border-white/30 dark:border-white/10">
+                        {photo.caption}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
