@@ -245,7 +245,7 @@ export const albums: Album[] = [
       }
     ],
     "date": "2026-11-19",
-    "description": "我们天雪雪世界第一！",
+    "description": "雪雪倾国倾城，无数男人为之倾倒",
     "cover": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E1.jpg"
   },
   {
