@@ -1,5 +1,5 @@
 // 🛡️ 本文件由 XingHuiSama 控制台自动生成，请勿手动修改
-export interface Photo { url: string; caption?: string; thumb?: string; w?: number; h?: number; }
+export interface Photo { url: string; caption?: string; }
 export interface Album { id: string; title: string; description: string; cover: string; date: string; photos: Photo[]; }
 
 export const albums: Album[] = [
@@ -245,7 +245,7 @@ export const albums: Album[] = [
       }
     ],
     "date": "2026-11-19",
-    "description": "雪雪倾国倾城，无数男人为之倾倒",
+    "description": "倾国倾城，无数男人为你倾倒",
     "cover": "/albums/%E7%BE%8E%E8%89%B2/thumbs/%E7%BE%8E1.jpg"
   },
   {
