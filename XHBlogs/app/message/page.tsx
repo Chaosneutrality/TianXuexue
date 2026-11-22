@@ -1,10 +1,42 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import { Trash2 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import PageTransition from '../../components/PageTransition';
 
-type Entry = { name: string; text: string; time: number };
+type Entry = { id: string; name: string; text: string; time: number };
+
+const TOKEN_KEY = 'guestbook_tokens';
+
+function loadTokens(): Record<string, string> {
+  try {
+    const raw = localStorage.getItem(TOKEN_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveToken(id: string, token: string) {
+  try {
+    const map = loadTokens();
+    map[id] = token;
+    localStorage.setItem(TOKEN_KEY, JSON.stringify(map));
+  } catch {
+    /* 忽略 */
+  }
+}
+
+function dropToken(id: string) {
+  try {
+    const map = loadTokens();
+    delete map[id];
+    localStorage.setItem(TOKEN_KEY, JSON.stringify(map));
+  } catch {
+    /* 忽略 */
+  }
+}
 
 function formatTime(ts: number) {
   const d = new Date(ts);
@@ -14,6 +46,7 @@ function formatTime(ts: number) {
 
 export default function MessagePage() {
   const [items, setItems] = useState<Entry[]>([]);
+  const [mine, setMine] = useState<Record<string, string>>({});
   const [name, setName] = useState('');
   const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
@@ -30,6 +63,7 @@ export default function MessagePage() {
   };
 
   useEffect(() => {
+    setMine(loadTokens());
     load();
   }, []);
 
@@ -50,6 +84,10 @@ export default function MessagePage() {
       });
       const data = await res.json();
       if (data?.ok) {
+        if (data.token && data.item?.id) {
+          saveToken(data.item.id, data.token);
+          setMine(loadTokens());
+        }
         setText('');
         setNotice('已留言 ✨');
         await load();
@@ -62,6 +100,25 @@ export default function MessagePage() {
     setSending(false);
   };
 
+  const remove = async (id: string) => {
+    const token = mine[id] || '';
+    try {
+      const res = await fetch(`/api/message?id=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`, {
+        method: 'DELETE',
+      });
+      const data = await res.json();
+      if (data?.ok) {
+        dropToken(id);
+        setMine(loadTokens());
+        await load();
+      } else {
+        setNotice(data?.message || '删除失败');
+      }
+    } catch {
+      setNotice('网络出了点问题');
+    }
+  };
+
   return (
     <div className="min-h-screen relative">
       <Navbar />
@@ -69,7 +126,7 @@ export default function MessagePage() {
         <main className="w-[92%] md:w-[80%] max-w-3xl mx-auto mt-24 md:mt-28 pb-20 relative z-10">
           <h1 className="text-3xl md:text-4xl font-black text-slate-800 dark:text-white mb-3">留 言</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400 mb-8">
-            不需要注册，写个名字就能留言。想说什么都行。
+            不需要注册，写个名字就能留言。自己留的言，可以自己删。
           </p>
 
           <form
@@ -110,18 +167,31 @@ export default function MessagePage() {
             {items.length === 0 && (
               <p className="text-center text-sm text-slate-400 py-10">还没有留言，第一条留给你。</p>
             )}
-            {items.map((it, i) => (
-              <div
-                key={`${it.time}-${i}`}
-                className="rounded-2xl border border-white/40 dark:border-white/10 bg-white/50 dark:bg-slate-800/40 backdrop-blur-md px-5 py-4 shadow"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-sm font-black text-indigo-500">{it.name}</span>
-                  <span className="text-[11px] text-slate-400">{formatTime(it.time)}</span>
+            {items.map((it) => {
+              const canDelete = Boolean(mine[it.id]);
+              return (
+                <div
+                  key={it.id}
+                  className="rounded-2xl border border-white/40 dark:border-white/10 bg-white/50 dark:bg-slate-800/40 backdrop-blur-md px-5 py-4 shadow"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-sm font-black text-indigo-500">{it.name}</span>
+                    <span className="text-[11px] text-slate-400">{formatTime(it.time)}</span>
+                    {canDelete && (
+                      <button
+                        onClick={() => remove(it.id)}
+                        title="删除这条留言"
+                        aria-label="删除这条留言"
+                        className="ml-auto flex h-7 w-7 items-center justify-center rounded-full text-slate-400 opacity-70 transition hover:bg-rose-500/10 hover:text-rose-500 hover:opacity-100"
+                      >
+                        <Trash2 size={15} strokeWidth={2} />
+                      </button>
+                    )}
+                  </div>
+                  <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-200 whitespace-pre-wrap">{it.text}</p>
                 </div>
-                <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-200 whitespace-pre-wrap">{it.text}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </main>
       </PageTransition>
