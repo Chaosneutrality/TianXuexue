@@ -11,3 +11,6 @@ s_ee_token.txt
 
 # 控制台里的相册图片副本（本地预览用，不入库）
 my-blog-manager/public/albums/
+
+# 留言板数据（只存在服务器上）
+XHBlogs/data/guestbook.json
