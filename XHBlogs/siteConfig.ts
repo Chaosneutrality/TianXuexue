@@ -33,7 +33,7 @@ export const siteConfig = {
 
   // 5. 首页照片墙预览图
   photoWallImage: "https://bu.dusays.com/2026/03/24/69c1e38b4c370.jpg",
-  cloudMusicIds: ["1963443271", "2755710858", "316100", "26082345", "22740149", "344418", "2600493765", "1411358329", "16232697", "426852063", "1414157538", "1497588709"],
+  cloudMusicIds: ["2112786518", "2755710858", "316100", "26082345", "22740149", "344418", "2600493765", "1411358329", "16232697", "426852063", "1414157538", "1497588709"],
   social: {
     github: "https://github.com/Chaosneutrality",
     gitee: "https://github.com/Chaosneutrality",
