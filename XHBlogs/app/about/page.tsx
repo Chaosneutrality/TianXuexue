@@ -13,7 +13,7 @@ import PageTransition from '../../components/PageTransition';
 import AboutClient from '../../components/AboutClient';
 import { Suspense } from 'react';
 
-function getDirActivities(dirName: string, typeLabel: '文章' | '杂谈' | '说说', linkPrefix: string) {
+function getDirActivities(dirName: string, typeLabel: '文章' | '记忆' | '说说', linkPrefix: string) {
   const dirPath = path.join(process.cwd(), dirName);
   if (!fs.existsSync(dirPath)) return [];
 
@@ -71,7 +71,7 @@ export default async function AboutPage() {
   }
 
   const posts = getDirActivities('posts', '文章', 'posts');
-  const chatters = getDirActivities('chatters', '杂谈', 'chatter');
+  const chatters = getDirActivities('chatters', '记忆', 'chatter');
   const moments = getDirActivities('moments', '说说', 'moments');
 
   const allActivities = [...posts, ...chatters, ...moments].sort((a, b) => {
